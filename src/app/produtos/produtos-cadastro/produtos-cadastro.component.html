@@ -1,0 +1,67 @@
+<div class="container">
+  <form #f="ngForm"  autocomplete="off" (ngSubmit)="salvar(f)" >
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <h1>{{ editando ? 'Edição de' : 'Novo' }} Produto</h1>
+      </div>
+
+
+      <!-- Data da Compra -->
+      <div class="ui-g-6 ui-md-3 ui-fluid">
+        <label>Data da Compra (*)</label>
+
+        <input pInputText  type='date' name="dataCompra" [(ngModel)]='produto.dataCompra'
+        ngModel #vencimento="ngModel" required/>
+
+        <app-message [control]="vencimento" error="required"
+          text="Informe uma data da compra"></app-message>
+      </div>
+      <!-- Data da Compra -->
+      <div class="ui-g-12 ui-md-9 ui-fluid">
+        <label>Descrição (*)</label>
+        <input pInputText type="text" name="descricao"
+        [(ngModel)]="produto.descricao" ngModel #descricao="ngModel" required minlength="5">
+
+        <app-message [control]="descricao" error="required"
+          text="Informe a descrição"></app-message>
+        <app-message [control]="descricao" error="minlength"
+          text="Mínimo de {{ descricao.errors?.minlength?.requiredLength }} caracteres"></app-message>
+      </div>
+
+      <div class="ui-g-12 ui-md-3 ui-fluid">
+        <label>Preco (*)</label>
+        <input pInputText type="text" name="valor" placeholder="0,00"
+          currencyMask [options]="{ prefix: '', thousands: '.', decimal: ',', allowNegative: false }"
+          [(ngModel)]="produto.preco" ngModel required>
+      </div>
+
+      <div class="ui-g-12 ui-md-3 ui-fluid">
+        <label>Quantidade (*)</label>
+        <input pInputText type="number" name="quantidade" placeholder="0"
+          [(ngModel)]="produto.quantidade" ngModel required>
+      </div>
+
+      <div class="ui-g-12 ui-md-3 ui-fluid">
+        <label>Categoria (*)</label>
+        <p-dropdown name="categoria" [options]="categorias"
+          placeholder="Selecione" [autoWidth]="false"
+          [(ngModel)]="produto.categoria.codigo" ngModel required></p-dropdown>
+      </div>
+
+
+      <div class="ui-g-12 ui-fluid">
+        <label>Observação</label>
+        <textarea name="obs"
+        [(ngModel)]="produto.observacao" pInputTextarea rows="3"></textarea>
+      </div>
+
+      <div class="ui-g-12">
+          <label>Obs.: O Botão salvar será ativado assim que preencher todos os campos com (*) que são obrigatórios</label><br>
+        <button style="margin-right: 10px;" pButton type="submit" label="Salvar" [disabled]="f.invalid" ></button>
+        <button (click)="novo(f)" pButton type="button" label="Novo" class="ui-button-info"></button><br><br>
+        <a routerLink="/produtos">Voltar para a pesquisa</a>
+      </div>
+    </div>
+
+  </form>
+</div>
