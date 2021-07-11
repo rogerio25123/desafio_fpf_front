@@ -38,7 +38,7 @@
     "tslib": "^1.14.1",
     "zone.js": "~0.9.1",
     "@angular-devkit/build-angular": "^0.803.29",
-    "@angular/cli": "^8.3.29",
+    "@angular/cli": "1.2.7",
     "@angular/compiler-cli": "~8.2.13",
     "@angular/language-service": "~8.2.13",
     "@types/jasmine": "~3.3.8",
@@ -59,7 +59,7 @@
   },
   "devDependencies": {},
   "engines" : { 
-    "node" : "13.1.0" ,
-    "npm"  : "6.12.1"
+    "node" : "8.1.2" ,
+    "npm"  : "5.0.3"
   }
 }
