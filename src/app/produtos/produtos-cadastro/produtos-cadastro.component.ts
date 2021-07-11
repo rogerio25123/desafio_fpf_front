@@ -64,7 +64,7 @@ export class ProdutosCadastroComponent implements OnInit {
       .catch(erro => this.errorHandle.handle(erro));
   }
 
-  salvar(form: FormControl) {
+  salvar(form) {
     // console.log(this.lancamento);
     if (this.editando) {
       console.log(form);
@@ -136,7 +136,7 @@ export class ProdutosCadastroComponent implements OnInit {
       });
   }
 
-  novo(form: FormControl) {
+  novo(form) {
     form.reset();
     setTimeout(function() {
         this.produto = new Produto();

@@ -26,7 +26,7 @@ export class ProdutosPesquisaComponent implements OnInit {
     private produtoService: ProdutosService,
     private errorHandle: ErrorHandlerService,
     private title: Title,
-    private auth: AuthService
+    public auth: AuthService
   ) { }
 
   ngOnInit() {
