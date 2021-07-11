@@ -4,8 +4,16 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8080'
+  apiUrl: 'https://mymoney-back.herokuapp.com',
+
+  tokenWhitelistedDomains: [ new RegExp('mymoney-back.herokuapp.com') ],
+  tokenBlacklistedRoutes: [ new RegExp('\/oauth\/token') ]
 };
+
+// export const environment = {
+//   production: false,
+//   apiUrl: 'http://localhost:8080'
+// };
 
 /*
  * For easier debugging in development mode, you can import the following file
