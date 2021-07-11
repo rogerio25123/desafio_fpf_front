@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://mymoney-back.herokuapp.com',
+  apiUrl: 'https://back-desafio-rogerio.herokuapp.com',
 
-  tokenWhitelistedDomains: [ new RegExp('mymoney-back.herokuapp.com') ],
+  tokenWhitelistedDomains: [ new RegExp('back-desafio-rogerio.herokuapp.com') ],
   tokenBlacklistedRoutes: [ new RegExp('\/oauth\/token') ]
 };
 
